@@ -4,9 +4,9 @@
 #
 # Run `azd up` to provision infrastructure and deploy the application.
 # ──────────────────────────────────────────────────────────────────────────────
-name: msi-ai-assist-lab
+name: zava-ai-assist-lab
 metadata:
-  template: msi-ai-assist-lab@0.1.0
+  template: zava-ai-assist-lab@0.1.0
 
 # Infrastructure provisioning via Terraform.
 infra:

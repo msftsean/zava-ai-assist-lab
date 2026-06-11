@@ -12,7 +12,7 @@ by default.  Run them with::
 When ``AI_ASSIST_LIVE_TESTS=1`` is set, the tests will hit real Azure
 services; otherwise they use the mock fixtures from ``conftest.py``.
 
-MSI Lab guidance
+Zava Lab guidance
 ----------------
 Start by running with mocks to validate the logic, then configure your
 Azure credentials and re-run to verify the live connection.

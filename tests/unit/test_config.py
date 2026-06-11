@@ -10,7 +10,7 @@ Validates that the ``Settings`` configuration class correctly:
 These tests override environment variables using monkeypatch so they are
 safe to run without a real ``.env`` file.
 
-MSI Lab guidance
+Zava Lab guidance
 ----------------
 These tests demonstrate how ``pydantic-settings`` resolves env vars.
 Try modifying defaults and watching which tests break — it's a great

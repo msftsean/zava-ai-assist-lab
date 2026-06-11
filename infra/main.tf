@@ -1,5 +1,5 @@
 # ──────────────────────────────────────────────────────────────────────────────
-# MSI Hands-on Lab: Azure Gov AI Assist – Root Module
+# Zava Hands-on Lab: Azure Gov AI Assist – Root Module
 #
 # One codebase, two clouds.  Set `azure_environment` to "usgovernment" (default)
 # or "public" to target Azure Government or Azure Commercial respectively.

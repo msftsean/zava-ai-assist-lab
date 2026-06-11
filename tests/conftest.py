@@ -8,7 +8,7 @@ Provides:
   • A FastAPI ``TestClient`` fixture wired to the application.
   • Sample document / chunk helpers for use in unit and integration tests.
 
-MSI Lab note
+Zava Lab note
 ------------
 All external-service fixtures use ``unittest.mock`` by default.  When you are
 ready to run against *live* Azure services, set the environment variable

@@ -10,7 +10,7 @@ Verifies:
 
 Marked ``@pytest.mark.integration`` — skipped by default.
 
-MSI Lab guidance
+Zava Lab guidance
 ----------------
 Azure Content Safety returns severity 0–6 for four categories.
 The default threshold of 2 means anything ≥ 2 is blocked.

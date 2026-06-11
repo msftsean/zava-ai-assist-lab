@@ -10,7 +10,7 @@ End-to-end tests for the retrieval-augmented generation flow:
 
 Marked ``@pytest.mark.integration`` — skipped by default.
 
-MSI Lab guidance
+Zava Lab guidance
 ----------------
 These tests use mocks by default.  To test against live services, set
 ``AI_ASSIST_LIVE_TESTS=1`` and provide valid Azure credentials.

@@ -5,7 +5,7 @@
 # pattern.  It is NOT production-grade.
 #
 # CPS-managed Kubernetes note:
-#   In real MSI environments, Kubernetes clusters are typically provisioned and
+#   In real Zava environments, Kubernetes clusters are typically provisioned and
 #   managed by the Cloud Platform Services (CPS) team.  Application teams
 #   receive a namespace and RBAC bindings rather than owning the cluster.  This
 #   stub is provided for architectural reference only.

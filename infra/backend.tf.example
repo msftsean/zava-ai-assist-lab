@@ -15,7 +15,7 @@ terraform {
     environment          = "usgovernment"
 
     resource_group_name  = "rg-terraform-state"
-    storage_account_name = "stmsiailabstate"
+    storage_account_name = "stzavaailabstate"
     container_name       = "tfstate"
     key                  = "ai-assist-lab.tfstate"
   }

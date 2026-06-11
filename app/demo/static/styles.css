@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════════════════════════════════════════════
-   MSI GUARDRAILS CONSOLE — Motorola Solutions inspired theme
-   Clean, light layout. Motorola Blue (#005fbe) is the primary brand color,
+   ZAVA GUARDRAILS CONSOLE — Zava inspired theme
+   Clean, light layout. Zava Blue (#005fbe) is the primary brand color,
    used in place of black. Typography: Roboto. Soft shadows, structured grid.
    ══════════════════════════════════════════════════════════════════════════════ */
 
@@ -10,7 +10,7 @@
   --font-sans: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  /* Motorola Blue family (brand) */
+  /* Zava Blue family (brand) */
   --moto-blue: #005fbe;
   --moto-blue-dark: #00468f;
   --moto-blue-bright: #1a7ee5;
@@ -27,7 +27,7 @@
   --text: #18222e;
   --text-muted: #5d6b7e;
 
-  /* Primary accent maps to Motorola Blue */
+  /* Primary accent maps to Zava Blue */
   --accent: var(--moto-blue);
 
   /* Status colors + tints (tuned for light backgrounds) */
@@ -75,7 +75,7 @@ body {
   min-height: 100vh;
 }
 
-/* ── Header (Motorola Blue brand bar) ───────────────────────────────────────── */
+/* ── Header (Zava Blue brand bar) ───────────────────────────────────────── */
 .header {
   background: linear-gradient(180deg, var(--moto-blue) 0%, var(--moto-blue-dark) 100%);
   color: #ffffff;

@@ -117,7 +117,7 @@ A question **passes** when:
 
 ---
 
-## 🏢 Plugging in MSI's Own Dataset
+## 🏢 Plugging in Zava's Own Dataset
 
 To evaluate with your organisation's actual SOPs and questions:
 
@@ -133,7 +133,7 @@ To evaluate with your organisation's actual SOPs and questions:
 4. **Run the evaluation:**
    ```bash
    python -m evals.harness.eval_runner \
-       --dataset path/to/msi_golden_questions.yaml
+       --dataset path/to/zava_golden_questions.yaml
    ```
 
 5. **Review and iterate:** Use the report to identify weak areas and

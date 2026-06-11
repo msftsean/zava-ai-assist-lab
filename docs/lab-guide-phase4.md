@@ -322,13 +322,13 @@ for profile_name, result in evaluation.items():
 
 ### 🔧 Creating Custom Profiles
 
-For MSI-specific needs, register a custom profile with per-category thresholds:
+For Zava-specific needs, register a custom profile with per-category thresholds:
 
 ```python
 from app.safety.filter_profiles import register_profile, apply_profile
 
 # Create a custom profile: strict on hate/violence, relaxed on others
-register_profile("msi_production", {
+register_profile("zava_production", {
     "hate": 1,
     "violence": 1,
     "self_harm": 2,
@@ -336,7 +336,7 @@ register_profile("msi_production", {
 })
 
 # Use it
-result = apply_profile("msi_production", scores)
+result = apply_profile("zava_production", scores)
 ```
 
 ```bash

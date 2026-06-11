@@ -8,8 +8,8 @@
 # └─────────────────────────────────────────────────────────────────────────┘
 azure_environment   = "usgovernment"
 location            = "usgovvirginia"
-project_prefix      = "msiailab"
-resource_group_name = "rg-msiailab-gov"
+project_prefix      = "zavaailab"
+resource_group_name = "rg-zavaailab-gov"
 
 openai_model_name    = "gpt-4o"
 openai_model_version = "2024-05-13"
@@ -19,7 +19,7 @@ postgres_admin_password = "Ch@ngeMe!2024"   # ← replace with a strong password
 postgres_sku            = "GP_Standard_D2s_v3"
 
 tags = {
-  project     = "msi-ai-assist-lab"
+  project     = "zava-ai-assist-lab"
   environment = "lab"
   managed_by  = "terraform"
   cloud       = "AzureUSGovernment"
@@ -30,8 +30,8 @@ tags = {
 # └─────────────────────────────────────────────────────────────────────────┘
 # azure_environment   = "public"
 # location            = "eastus2"
-# project_prefix      = "msiailab"
-# resource_group_name = "rg-msiailab-comm"
+# project_prefix      = "zavaailab"
+# resource_group_name = "rg-zavaailab-comm"
 #
 # openai_model_name    = "gpt-4o"
 # openai_model_version = "2024-05-13"
@@ -41,7 +41,7 @@ tags = {
 # postgres_sku            = "GP_Standard_D2s_v3"
 #
 # tags = {
-#   project     = "msi-ai-assist-lab"
+#   project     = "zava-ai-assist-lab"
 #   environment = "lab"
 #   managed_by  = "terraform"
 #   cloud       = "AzureCloud"

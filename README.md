@@ -1,4 +1,4 @@
-# MSI Hands-on Lab: Azure Gov AI Assist Architecture & Deployment
+# Zava Hands-on Lab: Azure Gov AI Assist Architecture & Deployment
 
 > **Move from architecture decisions to practical execution.** Leave with a repeatable deployment pattern, starter IaC, shared understanding of eval/safety/RAG, and documented next steps.
 
@@ -177,7 +177,7 @@ http://localhost:8000/demo/
 
 ## 🛡️ Guardrails Demo
 
-An interactive browser demo that runs a layered safety pipeline in front of Azure OpenAI: **Prompt Shields → Input Content Safety → Azure OpenAI → Output Content Safety**, with a live audit trail. Built to support Motorola Solutions / FedRAMP-style architecture conversations — switch between `strict`/`standard`/`relaxed` profiles, edit thresholds, add blocklist terms, and toggle Prompt Shields without a restart.
+An interactive browser demo that runs a layered safety pipeline in front of Azure OpenAI: **Prompt Shields → Input Content Safety → Azure OpenAI → Output Content Safety**, with a live audit trail. Built to support Zava / FedRAMP-style architecture conversations — switch between `strict`/`standard`/`relaxed` profiles, edit thresholds, add blocklist terms, and toggle Prompt Shields without a restart.
 
 Quick start:
 
@@ -265,7 +265,7 @@ Participants leave with:
 
 ## 📄 License
 
-Internal use — MSI Hands-on Lab.
+Internal use — Zava Hands-on Lab.
 
 ---
 

@@ -10,7 +10,7 @@ ingestion and query pipelines:
 
 These tests run without any external services or mocks.
 
-MSI Lab guidance
+Zava Lab guidance
 ----------------
 After completing the lab, try adding edge-case tests (e.g., Unicode text,
 very large documents, chunk_size == 1) to deepen your understanding.

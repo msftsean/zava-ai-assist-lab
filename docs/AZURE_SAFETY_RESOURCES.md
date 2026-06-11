@@ -1,7 +1,7 @@
 # 🔒 Azure AI Safety & Content Filtering Resources
 
 **Last Updated:** March 10, 2026  
-**Scope:** Motorola RAG Platform (Azure Government & Commercial)  
+**Scope:** Zava RAG Platform (Azure Government & Commercial)  
 **Status:** ✅ Active - All resources verified
 
 ---
@@ -176,12 +176,12 @@ curl http://localhost:8000/health
 | Configurable Severity | ✅ | Deployed | Per prompt/completion |
 | Streaming Mode | ⏳ | Roadmap | Reduce latency on output filtering |
 | Custom Blocklists | ⏳ | Roadmap | Organization-specific terms |
-| Prompt Shields (Gov) | ⏳ | Pending approval | High priority for Motorola |
+| Prompt Shields (Gov) | ⏳ | Pending approval | High priority for Zava |
 | Custom Jailbreak Detector | 🔨 | In progress | Community contribution welcome |
 
 ---
 
-## 🚀 Next Steps for Motorola
+## 🚀 Next Steps for Zava
 
 1. **[IMMEDIATE]** Test current default thresholds on representative SOP documents
 2. **[WEEK 1]** Evaluate if violence threshold needs relaxation (Medium → High)
@@ -193,5 +193,5 @@ curl http://localhost:8000/health
 
 **Document Version:** 1.0  
 **Last Refreshed:** 2026-03-10  
-**Owner:** Motorola AI Engineering Team  
+**Owner:** Zava AI Engineering Team  
 **Next Review:** 2026-04-10

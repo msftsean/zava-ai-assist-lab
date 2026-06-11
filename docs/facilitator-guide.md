@@ -2,7 +2,7 @@
 
 > 📊 **Status:** ████████████████████ 100% Complete | 🏷️ **Version:** 1.1.0 | 📅 **Updated:** 2026-03-10
 
-**MSI Hands-on Lab: Azure Gov AI Assist Architecture & Deployment**
+**Zava Hands-on Lab: Azure Gov AI Assist Architecture & Deployment**
 
 ---
 
@@ -206,7 +206,7 @@ Ensure the following are ready **before** the lab begins:
 **Pacing:**
 - Steps 1–2 (unit + integration tests): 5 min
 - Steps 3–5 (eval harness + interpret): 10 min
-- Step 6 (MSI-specific questions): 5 min
+- Step 6 (Zava-specific questions): 5 min
 - Step 7 (next steps + discussion): 5 min
 
 **Watch For:**
@@ -356,7 +356,7 @@ If something is truly broken and can't be fixed in 5 minutes:
 ### 📅 Within 2 Weeks
 
 - [ ] Schedule follow-up office hours for questions
-- [ ] Begin MSI-specific SOP ingestion (real documents, not samples)
+- [ ] Begin Zava-specific SOP ingestion (real documents, not samples)
 - [ ] Start SSP documentation for FedRAMP
 - [ ] Set up Azure Gov subscription (if not already done)
 

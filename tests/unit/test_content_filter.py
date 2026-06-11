@@ -11,7 +11,7 @@ The tests verify:
 
 All Azure Content Safety API calls are mocked — no network required.
 
-MSI Lab guidance
+Zava Lab guidance
 ----------------
 In production, Azure Content Safety returns severity scores 0–6 for four
 categories: Hate, Violence, SelfHarm, Sexual.  The default threshold is 2,

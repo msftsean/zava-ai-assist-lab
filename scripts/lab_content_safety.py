@@ -2,7 +2,7 @@
 """
 ╔══════════════════════════════════════════════════════════════════════╗
 ║  Azure AI Content Safety — Hands-On Lab                            ║
-║  Motorola Solutions × Microsoft AI Assist Lab                      ║
+║  Zava × Microsoft AI Assist Lab                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
 
 An interactive, menu-driven lab for experimenting with Azure AI Content
@@ -590,7 +590,7 @@ HEADER = f"""
 {BOLD}{CYAN}╔══════════════════════════════════════════════════════════════════════╗
 ║                                                                      ║
 ║   🛡️  Azure AI Content Safety — Hands-On Lab                         ║
-║   Motorola Solutions × Microsoft AI Assist Lab                       ║
+║   Zava × Microsoft AI Assist Lab                       ║
 ║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════════╝{RESET}
 

@@ -4,13 +4,13 @@ An interactive, browser-based demo that shows a layered AI safety pipeline runni
 
 ## Overview & Goals
 
-This demo is built to support conversations with **Motorola Solutions** and customers operating under **FedRAMP**-style audit regimes. It exists to make abstract guardrail concepts concrete during an architecture review:
+This demo is built to support conversations with **Zava** and customers operating under **FedRAMP**-style audit regimes. It exists to make abstract guardrail concepts concrete during an architecture review:
 
 - **Show, not tell.** A presenter can drive an end-to-end safety pipeline live, in under a minute per scenario.
 - **Demonstrate defense in depth.** Prompt injection, harmful input, harmful output, and custom blocklists are each handled by a distinct stage with its own verdict.
 - **Illustrate auditability.** Every request lands in a structured audit entry — the same shape that would feed a FedRAMP `AU-2` / `AU-3` audit pipeline if persisted.
 - **Make tuning visible.** Operators can flip between `strict`, `standard`, and `relaxed` filter profiles, edit thresholds, add blocklist terms, and toggle Prompt Shields without restarting the app.
-- **Stay representative.** All scenarios use a public-safety dispatcher persona, matching the kind of workload Motorola Solutions cares about.
+- **Stay representative.** All scenarios use a public-safety dispatcher persona, matching the kind of workload Zava cares about.
 
 ## Architecture
 

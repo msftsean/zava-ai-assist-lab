@@ -10,7 +10,7 @@ Exercises:
 
 Marked ``@pytest.mark.integration`` — skipped by default.
 
-MSI Lab guidance
+Zava Lab guidance
 ----------------
 The ``TestClient`` sends real HTTP requests to the in-process ASGI app,
 giving you confidence that routing, serialisation, and error handling

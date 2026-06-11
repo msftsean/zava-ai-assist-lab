@@ -6,7 +6,7 @@
 
 ## 🎯 Objective
 
-Validate the system through automated tests, evaluate response quality using a golden question dataset and evaluation harness, and discuss how to extend the platform with MSI-specific content and prepare for the March FedRAMP stage.
+Validate the system through automated tests, evaluate response quality using a golden question dataset and evaluation harness, and discuss how to extend the platform with Zava-specific content and prepare for the March FedRAMP stage.
 
 ---
 
@@ -226,15 +226,15 @@ Key metrics explained:
 
 ---
 
-## 📋 Step 6: Discuss How to Add MSI-Specific Questions
+## 📋 Step 6: Discuss How to Add Zava-Specific Questions
 
-To extend the evaluation dataset with MSI-specific content:
+To extend the evaluation dataset with Zava-specific content:
 
 ### 🔧 6.1 Adding New SOPs
 
 ```bash
 # 1. Place new SOP documents in the corpus
-cp /path/to/msi-sop-*.md evals/datasets/
+cp /path/to/zava-sop-*.md evals/datasets/
 
 # 2. Re-run the ingestion pipeline (Phase 2)
 python -m app.ingestion.run \
@@ -253,13 +253,13 @@ Create new entries in the golden questions file:
 
 ```json
 {
-  "id": "msi-gq-001",
-  "question": "What is MSI's process for handling classified spills?",
-  "expected_answer": "Immediately isolate the affected system, notify the FSO within 1 hour, and follow the 10-step remediation process in MSI-SOP-SEC-005.",
-  "source_documents": ["msi-sop-sec-005.md"],
+  "id": "zava-gq-001",
+  "question": "What is Zava's process for handling classified spills?",
+  "expected_answer": "Immediately isolate the affected system, notify the FSO within 1 hour, and follow the 10-step remediation process in Zava-SOP-SEC-005.",
+  "source_documents": ["zava-sop-sec-005.md"],
   "category": "security",
   "difficulty": "medium",
-  "notes": "MSI-specific procedure, not covered by generic SOPs"
+  "notes": "Zava-specific procedure, not covered by generic SOPs"
 }
 ```
 
@@ -267,7 +267,7 @@ Create new entries in the golden questions file:
 
 1. **Cover the full difficulty spectrum** — include easy lookups, multi-step reasoning, and cross-document synthesis
 2. **Include negative cases** — questions the SOPs don't answer (expected: "I don't have enough information")
-3. **Test terminology** — use acronyms and jargon that MSI personnel would actually use
+3. **Test terminology** — use acronyms and jargon that Zava personnel would actually use
 4. **Be specific in expected answers** — "30 minutes" is better than "the SOP covers escalation timelines"
 5. **Map to source documents** — every golden question should trace to specific SOPs
 
@@ -312,14 +312,14 @@ Create new entries in the golden questions file:
 
 ```
 January:
-  ├── Finalize SOP corpus (MSI-specific documents)
+  ├── Finalize SOP corpus (Zava-specific documents)
   ├── Complete golden questions dataset (50+ questions)
   ├── Deploy to Azure Gov subscription
   └── Begin SSP documentation
 
 February:
   ├── Network hardening (Private Endpoints, NSGs)
-  ├── Integrate with MSI identity provider
+  ├── Integrate with Zava identity provider
   ├── CI/CD pipeline with gated deployments
   ├── Pen test and remediation
   └── Evaluation target: 90%+ faithfulness
@@ -327,13 +327,13 @@ February:
 March:
   ├── Final security review
   ├── FedRAMP readiness assessment
-  ├── Stakeholder demo with real MSI SOPs
+  ├── Stakeholder demo with real Zava SOPs
   └── Go/no-go decision for ATO package submission
 ```
 
 > **🗣️ Facilitator Note:** This is the wrap-up discussion. Key messages:
 > 1. **Today was a foundation** — the architecture is sound, but production readiness requires hardening.
-> 2. **The eval framework is your compass** — as you add MSI content and tune the system, the eval scores tell you if you're improving or regressing.
+> 2. **The eval framework is your compass** — as you add Zava content and tune the system, the eval scores tell you if you're improving or regressing.
 > 3. **FedRAMP is a process, not a switch** — start the SSP documentation now, not in March.
 >
 > End with action items: each participant should leave with 1–2 specific tasks they own for the next sprint.

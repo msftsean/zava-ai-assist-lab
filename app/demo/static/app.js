@@ -1,4 +1,4 @@
-// MSI Guardrails Console — React-based tactical command-center UI
+// Zava Guardrails Console — React-based tactical command-center UI
 const { useState, useEffect, useRef } = React;
 const { createRoot } = ReactDOM;
 
@@ -171,9 +171,9 @@ function Header({ services }) {
   return (
     <header className="header">
       <div className="header-brand">
-        <span className="header-logo" aria-hidden="true">MSI</span>
+        <span className="header-logo" aria-hidden="true">Zava</span>
         <div className="header-title">
-          <h1>MSI Guardrails Console</h1>
+          <h1>Zava Guardrails Console</h1>
           <p className="header-subtitle">
             Azure AI Content Safety · Prompt Shields · Azure OpenAI
           </p>

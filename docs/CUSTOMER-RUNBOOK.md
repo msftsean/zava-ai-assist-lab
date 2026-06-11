@@ -1,4 +1,4 @@
-# MSI AI Assist Lab - Customer Runbook
+# Zava AI Assist Lab - Customer Runbook
 
 A self-service guide to deploy and run the AI Assist Lab in your own Azure subscription. The lab is a Retrieval-Augmented Generation (RAG) platform with a layered AI safety pipeline (Prompt Shields, Content Safety on input and output) in front of Azure OpenAI. It runs unchanged on Azure Commercial or Azure Government; the cloud is selected entirely by configuration.
 

@@ -6,7 +6,7 @@ steps that transform ingested document chunks into searchable vectors.
 
 Marked ``@pytest.mark.integration`` — skipped by default.
 
-MSI Lab guidance
+Zava Lab guidance
 ----------------
 These tests validate that the indexing module correctly:
   1. Calls Azure OpenAI to generate 1536-dimensional embedding vectors

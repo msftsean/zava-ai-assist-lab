@@ -19,7 +19,7 @@ Usage::
     # Write report to a specific file:
     python -m evals.harness.eval_runner --mock --output results.json
 
-MSI Lab guidance
+Zava Lab guidance
 ----------------
 This harness is intentionally simple so you can extend it with your own
 metrics (e.g., LLM-based relevance scoring, ROUGE, BERTScore).

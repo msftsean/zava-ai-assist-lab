@@ -10,7 +10,7 @@ Tests the RAG (Retrieval-Augmented Generation) pipeline components:
 All Azure OpenAI and AI Search calls are mocked so the tests run
 without any external services.
 
-MSI Lab guidance
+Zava Lab guidance
 ----------------
 Understanding prompt composition is critical for RAG quality.
 Experiment with modifying ``SYSTEM_PROMPT`` or the context format

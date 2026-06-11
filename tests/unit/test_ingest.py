@@ -12,7 +12,7 @@ Covered functionality:
 All Azure Blob Storage interactions are mocked via the ``mock_blob_service``
 fixture defined in ``conftest.py``.
 
-MSI Lab guidance
+Zava Lab guidance
 ----------------
 Try modifying ``chunk_size`` and ``overlap`` to observe how chunk counts
 and content change — this is key to understanding RAG retrieval quality.

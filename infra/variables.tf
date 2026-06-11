@@ -1,5 +1,5 @@
 # ──────────────────────────────────────────────────────────────────────────────
-# MSI Hands-on Lab – Root Variables
+# Zava Hands-on Lab – Root Variables
 # Supports AzureUSGovernment (default) and AzureCloud via parameterisation.
 # ──────────────────────────────────────────────────────────────────────────────
 
@@ -23,13 +23,13 @@ variable "location" {
 variable "project_prefix" {
   description = "Short prefix used to name all lab resources (lowercase, no special chars)."
   type        = string
-  default     = "msiailab"
+  default     = "zavaailab"
 }
 
 variable "resource_group_name" {
   description = "Name of the resource group that will contain all lab resources."
   type        = string
-  default     = "rg-msiailab"
+  default     = "rg-zavaailab"
 }
 
 variable "openai_model_name" {
@@ -66,7 +66,7 @@ variable "tags" {
   description = "Common tags applied to every resource for lab identification."
   type        = map(string)
   default = {
-    project     = "msi-ai-assist-lab"
+    project     = "zava-ai-assist-lab"
     environment = "lab"
     managed_by  = "terraform"
   }
