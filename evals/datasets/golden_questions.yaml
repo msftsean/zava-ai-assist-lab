@@ -1,0 +1,78 @@
+---
+# Golden Questions Dataset for AI Assist Lab Evaluation
+# =====================================================
+# Each question simulates a real user query against SOP documents.
+# Use this dataset with evals/harness/eval_runner.py to measure
+# RAG pipeline quality.
+#
+# Fields:
+#   id                 – unique identifier (gq-NNN)
+#   question           – the natural-language question to ask
+#   expected_topics    – keywords that SHOULD appear in the answer
+#   expected_min_sources – minimum number of source docs cited
+#   difficulty         – easy | medium | hard
+#
+# MSI Lab guidance:
+#   Replace or extend these questions with your own domain-specific
+#   dataset after completing the lab.  See evals/README.md for details.
+
+questions:
+  - id: gq-001
+    question: "What is the standard operating procedure for system backup?"
+    expected_topics: ["backup", "recovery", "schedule"]
+    expected_min_sources: 1
+    difficulty: "easy"
+
+  - id: gq-002
+    question: "How often are incremental backups performed?"
+    expected_topics: ["incremental", "nightly", "backup"]
+    expected_min_sources: 1
+    difficulty: "easy"
+
+  - id: gq-003
+    question: "What are the first steps in an incident response?"
+    expected_topics: ["identify", "classify", "incident", "contain"]
+    expected_min_sources: 1
+    difficulty: "easy"
+
+  - id: gq-004
+    question: "Who is responsible for approving access control changes?"
+    expected_topics: ["access", "approval", "manager", "authorised"]
+    expected_min_sources: 1
+    difficulty: "medium"
+
+  - id: gq-005
+    question: "What is the recovery time objective (RTO) for critical systems?"
+    expected_topics: ["recovery", "RTO", "hours", "critical"]
+    expected_min_sources: 1
+    difficulty: "medium"
+
+  - id: gq-006
+    question: "Describe the process for revoking user access after termination."
+    expected_topics: ["revoke", "termination", "disable", "access"]
+    expected_min_sources: 1
+    difficulty: "medium"
+
+  - id: gq-007
+    question: "What multi-factor authentication methods are approved for use?"
+    expected_topics: ["MFA", "authentication", "multi-factor", "token"]
+    expected_min_sources: 1
+    difficulty: "medium"
+
+  - id: gq-008
+    question: "How should a post-incident review be conducted?"
+    expected_topics: ["post-incident", "review", "lessons", "report"]
+    expected_min_sources: 1
+    difficulty: "hard"
+
+  - id: gq-009
+    question: "What are the backup verification and integrity check procedures?"
+    expected_topics: ["verify", "integrity", "checksum", "restore"]
+    expected_min_sources: 1
+    difficulty: "hard"
+
+  - id: gq-010
+    question: "Compare the access control requirements for privileged vs. standard accounts."
+    expected_topics: ["privileged", "standard", "access", "control", "least privilege"]
+    expected_min_sources: 1
+    difficulty: "hard"

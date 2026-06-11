@@ -1,0 +1,48 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# terraform.tfvars.example
+# Copy to terraform.tfvars and customise.  NEVER commit secrets to source.
+# ──────────────────────────────────────────────────────────────────────────────
+
+# ┌─────────────────────────────────────────────────────────────────────────┐
+# │  Azure Government (default)                                             │
+# └─────────────────────────────────────────────────────────────────────────┘
+azure_environment   = "usgovernment"
+location            = "usgovvirginia"
+project_prefix      = "msiailab"
+resource_group_name = "rg-msiailab-gov"
+
+openai_model_name    = "gpt-4o"
+openai_model_version = "2024-05-13"
+
+postgres_admin_username = "pgadmin"
+postgres_admin_password = "Ch@ngeMe!2024"   # ← replace with a strong password
+postgres_sku            = "GP_Standard_D2s_v3"
+
+tags = {
+  project     = "msi-ai-assist-lab"
+  environment = "lab"
+  managed_by  = "terraform"
+  cloud       = "AzureUSGovernment"
+}
+
+# ┌─────────────────────────────────────────────────────────────────────────┐
+# │  Azure Commercial – uncomment the block below and comment out above    │
+# └─────────────────────────────────────────────────────────────────────────┘
+# azure_environment   = "public"
+# location            = "eastus2"
+# project_prefix      = "msiailab"
+# resource_group_name = "rg-msiailab-comm"
+#
+# openai_model_name    = "gpt-4o"
+# openai_model_version = "2024-05-13"
+#
+# postgres_admin_username = "pgadmin"
+# postgres_admin_password = "Ch@ngeMe!2024"
+# postgres_sku            = "GP_Standard_D2s_v3"
+#
+# tags = {
+#   project     = "msi-ai-assist-lab"
+#   environment = "lab"
+#   managed_by  = "terraform"
+#   cloud       = "AzureCloud"
+# }

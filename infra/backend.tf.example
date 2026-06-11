@@ -1,0 +1,22 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# backend.tf.example – Remote State Backend
+#
+# Copy to backend.tf and fill in your values.  For the lab you can also run
+# without a remote backend (Terraform defaults to local state).
+#
+# IMPORTANT: For Azure Government use the `environment` attribute to point
+# the backend at the Gov storage endpoints.
+# ──────────────────────────────────────────────────────────────────────────────
+
+terraform {
+  backend "azurerm" {
+    # For Azure Government, set environment = "usgovernment".
+    # For Azure Commercial, set environment = "public" (or omit – it's the default).
+    environment          = "usgovernment"
+
+    resource_group_name  = "rg-terraform-state"
+    storage_account_name = "stmsiailabstate"
+    container_name       = "tfstate"
+    key                  = "ai-assist-lab.tfstate"
+  }
+}

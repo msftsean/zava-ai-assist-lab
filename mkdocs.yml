@@ -1,0 +1,41 @@
+site_name: MSI AI Assist Lab
+site_description: "MSI Hands-on Lab: Azure Gov AI Assist Architecture & Deployment"
+site_url: ""
+repo_url: https://github.com/your-org/ai_assist_lab
+repo_name: ai_assist_lab
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+  features:
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Lab Guides:
+    - Phase 1 - Infrastructure: lab-guide-phase1.md
+    - Phase 2 - Data Ingestion: lab-guide-phase2.md
+    - Phase 3 - RAG Query: lab-guide-phase3.md
+    - Phase 4 - Safety: lab-guide-phase4.md
+    - Phase 5 - Evaluation: lab-guide-phase5.md
+    - Phase 6 - Content Safety Lab: lab-guide-phase6.md
+  - Reference:
+    - Architecture Decisions: architecture-decisions.md
+    - Gov Compatibility: gov-compatibility-checklist.md
+    - Troubleshooting: troubleshooting.md
+    - Non-Goals: non-goals.md
+    - Azure Safety Resources: AZURE_SAFETY_RESOURCES.md
+  - Facilitator Guide: facilitator-guide.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true

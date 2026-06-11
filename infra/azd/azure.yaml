@@ -1,0 +1,30 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# azure.yaml – Azure Developer CLI (azd) configuration
+# https://learn.microsoft.com/azure/developer/azure-developer-cli/
+#
+# Run `azd up` to provision infrastructure and deploy the application.
+# ──────────────────────────────────────────────────────────────────────────────
+name: msi-ai-assist-lab
+metadata:
+  template: msi-ai-assist-lab@0.1.0
+
+# Infrastructure provisioning via Terraform.
+infra:
+  provider: terraform
+  path: ./infra
+  module: main
+
+# Services (add application containers / functions here as the lab evolves).
+# services:
+#   api:
+#     project: ./app/api
+#     host: containerapp          # or aks
+#     language: python
+#   web:
+#     project: ./app/web
+#     host: containerapp
+#     language: typescript
+
+# Pipeline configuration (CI/CD).
+pipeline:
+  provider: github
