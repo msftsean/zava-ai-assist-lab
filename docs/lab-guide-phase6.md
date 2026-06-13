@@ -180,34 +180,44 @@ Select **Exercise 5** from the menu. This exercise runs text through the complet
 
 **The 4-stage pipeline:**
 
+```mermaid
+flowchart TD
+    In["Input Text"] --> S1{"Stage 1: Blocklist"}
+    S1 -- matched --> B["&#128683; BLOCKED (with reason)"]
+    S1 -- pass --> S2{"Stage 2: Prompt Shield"}
+    S2 -- injection --> B
+    S2 -- pass --> S3{"Stage 3: Content Safety API"}
+    S3 -- "severity &ge; threshold" --> B
+    S3 -- pass --> S4["Stage 4: Filter Profile<br/>apply profile-specific rules"]
+    S4 --> A["&#9989; ALLOWED"]
 ```
-Input Text
-    │
-    ▼
-┌─────────────────────┐
-│ Stage 1: Blocklist   │──▶ BLOCK (if matched) or PASS
-└─────────┬───────────┘
-          │
-          ▼
-┌─────────────────────┐
-│ Stage 2: Prompt      │──▶ BLOCK (if injection detected) or PASS
-│         Shield       │
-└─────────┬───────────┘
-          │
-          ▼
-┌─────────────────────┐
-│ Stage 3: Content     │──▶ BLOCK (if severity ≥ threshold) or PASS
-│         Safety API   │
-└─────────┬───────────┘
-          │
-          ▼
-┌─────────────────────┐
-│ Stage 4: Filter      │──▶ Apply profile-specific rules
-│         Profile      │
-└─────────┬───────────┘
-          │
-          ▼
-    ✅ ALLOWED  or  🚫 BLOCKED (with reason)
+
+```mermaid
+sequenceDiagram
+    participant In as Input Text
+    participant S1 as Stage 1 Blocklist
+    participant S2 as Stage 2 Prompt Shield
+    participant S3 as Stage 3 Content Safety
+    participant S4 as Stage 4 Filter Profile
+    participant Out as Result
+
+    In->>S1: text
+    alt blocklist match
+        S1-->>Out: BLOCKED (reason)
+    else pass
+        S1->>S2: text
+        alt injection detected
+            S2-->>Out: BLOCKED (reason)
+        else pass
+            S2->>S3: text
+            alt severity >= threshold
+                S3-->>Out: BLOCKED (reason)
+            else pass
+                S3->>S4: text
+                S4-->>Out: ALLOWED (profile applied)
+            end
+        end
+    end
 ```
 
 **Try running different inputs and observe:**

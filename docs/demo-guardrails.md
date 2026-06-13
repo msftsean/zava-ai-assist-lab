@@ -14,25 +14,37 @@ This demo is built to support conversations with **Zava** and customers operatin
 
 ## Architecture
 
+```mermaid
+flowchart LR
+    User --> PS["Prompt Shield<br/>(Azure or regex fallback)"]
+    PS --> IS["Input Safety<br/>(profile + blocklist)"]
+    IS --> AOAI["Azure OpenAI<br/>(chat: public-safety SOP)"]
+    AOAI --> OS["Output Safety<br/>(profile)"]
+    OS --> Resp["Response"]
+    PS -. verdicts + traces .-> Audit["Audit Buffer<br/>(in-memory ring)"]
+    IS -. verdicts + traces .-> Audit
+    AOAI -. verdicts + traces .-> Audit
+    OS -. verdicts + traces .-> Audit
 ```
-                                                         ┌──────────────────┐
-                                                         │   Audit Buffer   │
-                                                         │ (in-memory ring) │
-                                                         └─────────▲────────┘
-                                                                   │ append
-                                                                   │
-   ┌──────┐    ┌────────────────┐    ┌──────────────┐    ┌──────────────┐    ┌────────────────┐    ┌──────────┐
-   │ User │──▶ │ Prompt Shield  │──▶ │ Input Safety │──▶ │ Azure OpenAI │──▶ │ Output Safety  │──▶ │ Response │
-   └──────┘    │ (Azure or      │    │ (profile +   │    │  (chat: pub. │    │ (profile)      │    └──────────┘
-               │  regex fallback│    │  blocklist)  │    │  safety SOP) │    │                │
-               └───────┬────────┘    └──────┬───────┘    └──────┬───────┘    └────────┬───────┘
-                       │                    │                   │                     │
-                       └────────────────────┴───────────────────┴─────────────────────┘
-                                                   │
-                                            verdicts + traces
-                                                   │
-                                                   ▼
-                                          (fanout to Audit Buffer)
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant PS as Prompt Shield
+    participant IS as Input Safety
+    participant AOAI as Azure OpenAI
+    participant OS as Output Safety
+    participant Audit as Audit Buffer
+
+    User->>PS: Prompt
+    PS->>Audit: verdict + trace
+    PS->>IS: Pass
+    IS->>Audit: verdict + trace
+    IS->>AOAI: Grounded request
+    AOAI->>Audit: verdict + trace
+    AOAI->>OS: Model output
+    OS->>Audit: verdict + trace
+    OS-->>User: Response
 ```
 
 **Verdicts emitted by the pipeline:**

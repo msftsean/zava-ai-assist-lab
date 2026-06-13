@@ -369,26 +369,13 @@ Since Content Safety doesn't catch prompt injection (Step 8), we implement a **p
 
 The Prompt Shield uses 12 regex patterns with weighted confidence scoring to detect common injection techniques:
 
-```
-Injection Attempt
-    │
-    ├── Pattern Matching (12 regex patterns)
-    │     ├── Role manipulation ("you are now...", "act as...")
-    │     ├── Instruction override ("ignore previous instructions")
-    │     ├── System prompt extraction ("repeat your system prompt")
-    │     ├── Delimiter injection ("###", "---", "```")
-    │     └── ... (8 more pattern categories)
-    │
-    ├── Weighted Confidence Scoring
-    │     ├── Each pattern has a weight (0.1 – 1.0)
-    │     ├── Multiple matches increase confidence
-    │     └── Normalized to confidence level
-    │
-    └── Result: ShieldResult
-          ├── is_injection: bool
-          ├── confidence: none | low | medium | high
-          ├── matched_patterns: list[str]
-          └── details: str
+```mermaid
+flowchart TD
+    A["Injection Attempt"] --> P["1 &middot; Pattern Matching<br/>12 regex patterns"]
+    P --> S["2 &middot; Weighted Confidence Scoring<br/>weights 0.1&ndash;1.0 &middot; multiple matches raise confidence"]
+    S --> R["3 &middot; ShieldResult"]
+    P -. examples .-> PE["Role manipulation &middot; Instruction override<br/>System-prompt extraction &middot; Delimiter injection &middot; &hellip;"]
+    R -. fields .-> RF["is_injection: bool<br/>confidence: none | low | medium | high<br/>matched_patterns: list[str]<br/>details: str"]
 ```
 
 ### 💻 Using the Prompt Shield
@@ -495,18 +482,14 @@ Confirm that:
 
 **Defense in depth:**
 
-```
-User Input
-    │
-    ├── Pre-check  ──→ BLOCK (harmful input never reaches the model)
-    │
-    ▼
-  [RAG Pipeline]
-    │
-    ├── Post-check ──→ BLOCK (harmful output never reaches the user)
-    │
-    ▼
-  Safe Response
+```mermaid
+flowchart TD
+    In["User Input"] --> Pre{"Pre-check"}
+    Pre -- harmful --> B1["BLOCK<br/>input never reaches the model"]
+    Pre -- safe --> RAG["RAG Pipeline"]
+    RAG --> Post{"Post-check"}
+    Post -- harmful --> B2["BLOCK<br/>output never reaches the user"]
+    Post -- safe --> Safe["Safe Response"]
 ```
 
 Removing either check creates a gap. Pre-check alone misses model misbehavior. Post-check alone wastes compute on harmful input. Together, they provide robust protection.

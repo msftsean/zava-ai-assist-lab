@@ -22,43 +22,39 @@ Build and test the retrieval-augmented generation (RAG) pipeline end-to-end. You
 
 Before running queries, understand the data flow:
 
+```mermaid
+flowchart TD
+    Q["User Question"] --> E["Embed Query<br/>text-embedding-3-small"]
+    E --> R{"Retrieval Layer"}
+    R --> PG["pgvector<br/>(cosine similarity)"]
+    R --> AS["AI Search<br/>(hybrid: vector + BM25)"]
+    PG --> M["Merge & Re-rank"]
+    AS --> M
+    M --> C["Compose Prompt<br/>system + context + question"]
+    C --> L["Azure OpenAI GPT-4.1"]
+    L --> O["Response + Sources"]
 ```
-User Question
-     │
-     ▼
-┌─────────────┐
-│  Embed Query │  ← text-embedding-3-small
-└──────┬──────┘
-       │
-       ▼
-┌──────────────────────────────────────────┐
-│          Retrieval Layer                  │
-│                                          │
-│  ┌─────────────┐    ┌─────────────────┐  │
-│  │  pgvector    │    │  AI Search      │  │
-│  │  (cosine     │    │  (hybrid:       │  │
-│  │   similarity)│    │   vector + BM25)│  │
-│  └──────┬──────┘    └───────┬─────────┘  │
-│         │                   │            │
-│         └─────────┬─────────┘            │
-│                   │                      │
-│           Merge & Re-rank                │
-└───────────┬──────────────────────────────┘
-            │
-            ▼
-┌─────────────────────┐
-│  Compose Prompt      │  ← System prompt + retrieved context + user question
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│  Azure OpenAI GPT-4.1 │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│  Response + Sources   │
-└───────────────────────┘
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant Embed as text-embedding-3-small
+    participant PG as pgvector
+    participant AS as AI Search
+    participant LLM as Azure OpenAI GPT-4.1
+
+    User->>Embed: Question
+    Embed-->>User: Query vector
+    par Hybrid retrieval
+        User->>PG: Cosine similarity search
+        PG-->>User: Candidate chunks
+    and
+        User->>AS: Hybrid (vector + BM25) search
+        AS-->>User: Candidate chunks
+    end
+    Note over User: Merge & re-rank, compose grounded prompt
+    User->>LLM: System prompt + context + question
+    LLM-->>User: Answer + cited sources
 ```
 
 Review the query module:

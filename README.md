@@ -12,29 +12,41 @@
 
 A complete AI-assisted operations platform using RAG (Retrieval-Augmented Generation) on Azure Government — with customizable content filters, prompt injection detection, and a hands-on safety lab:
 
+```mermaid
+flowchart TD
+    SOP["SOP Docs<br/>(.md / .txt)"] --> Blob["Azure Blob Storage"]
+    Blob --> Ingest["Ingestion + Chunking"]
+    Ingest --> Search["Azure AI Search<br/>(vectors)"]
+    Ingest --> PG["PostgreSQL + pgvector"]
+    Search --> RAG["RAG Query Engine<br/>retrieve &rarr; compose &rarr; generate"]
+    PG --> RAG
+    Safety["Azure AI Content Safety<br/>(pre + post)"] <--> RAG
+    RAG --> OpenAI["Azure OpenAI<br/>(GPT-4.1)"]
 ```
-┌─────────────┐    ┌──────────────┐    ┌─────────────────┐    ┌──────────────┐
-│  SOP Docs   │───▶│  Blob Store  │───▶│  Ingestion +    │───▶│  AI Search   │
-│  (.md/.txt) │    │              │    │  Chunking       │    │  (vectors)   │
-└─────────────┘    └──────────────┘    └────────┬────────┘    └──────┬───────┘
-                                                │                    │
-                                                ▼                    │
-                                       ┌────────────────┐           │
-                                       │  PostgreSQL    │           │
-                                       │  + pgvector    │           │
-                                       └────────┬───────┘           │
-                                                │                    │
-                   ┌────────────────┐           ▼                    ▼
-                   │ Content Safety │◀── ┌────────────────────────────────┐
-                   │ (pre + post)   │──▶ │     RAG Query Engine           │
-                   └────────────────┘    │  retrieve → compose → generate │
-                                         └───────────────┬────────────────┘
-                                                         │
-                                                         ▼
-                                                  ┌─────────────┐
-                                                  │ Azure OpenAI│
-                                                  │  (GPT-4.1)   │
-                                                  └─────────────┘
+
+### Request Lifecycle
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant API as FastAPI /query
+    participant Safety as Content Safety
+    participant Embed as Azure OpenAI (embeddings)
+    participant Search as AI Search + pgvector
+    participant LLM as Azure OpenAI (GPT-4.1)
+
+    User->>API: Question
+    API->>Safety: Pre-check input
+    Safety-->>API: Allowed
+    API->>Embed: Embed question
+    Embed-->>API: Query vector
+    API->>Search: Hybrid search (vector + keyword)
+    Search-->>API: Top-k SOP chunks
+    API->>LLM: Grounded prompt (context + question)
+    LLM-->>API: Answer + citations
+    API->>Safety: Post-check output
+    Safety-->>API: Allowed
+    API-->>User: Answer + sources
 ```
 
 ## 📋 Target Stack
