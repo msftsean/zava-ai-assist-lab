@@ -33,7 +33,7 @@ A complete AI-assisted operations platform using RAG (Retrieval-Augmented Genera
                                                          ▼
                                                   ┌─────────────┐
                                                   │ Azure OpenAI│
-                                                  │  (GPT-4o)   │
+                                                  │  (GPT-4.1)   │
                                                   └─────────────┘
 ```
 
@@ -41,7 +41,7 @@ A complete AI-assisted operations platform using RAG (Retrieval-Augmented Genera
 
 | Component | Azure Service | Purpose |
 |-----------|--------------|---------|
-| LLM | Azure OpenAI (GPT-4o) | Generation, embeddings |
+| LLM | Azure OpenAI (GPT-4.1) | Generation, embeddings |
 | Vector DB | PostgreSQL Flexible Server + pgvector | Vector storage & similarity search |
 | Search | Azure AI Search | Hybrid search (vector + keyword) |
 | Safety | Azure AI Content Safety | Input/output guardrails |

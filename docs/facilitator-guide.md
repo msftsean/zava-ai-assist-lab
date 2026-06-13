@@ -60,7 +60,7 @@ Ensure the following are ready **before** the lab begins:
 
 ### ☁️ Azure Quotas (verify in advance)
 
-- [ ] Azure OpenAI: at least 2 deployments available (gpt-4o, text-embedding-ada-002)
+- [ ] Azure OpenAI: at least 2 deployments available (gpt-4.1, text-embedding-3-small)
 - [ ] PostgreSQL Flexible Server: quota for at least 1 server
 - [ ] Azure AI Search: quota for at least 1 Basic-tier service
 - [ ] Content Safety: available in the target region
@@ -296,7 +296,7 @@ A: Re-run the ingestion pipeline when SOPs are updated. In production, you'd set
 A: This is why evaluation matters. Common causes: wrong chunks retrieved (tune chunking/search), model ignores context (strengthen the system prompt), or the information genuinely isn't in the SOPs (add it).
 
 **Q: Can we use a different model (GPT-4, GPT-3.5)?**
-A: Yes. GPT-4o is the recommended default, but the pipeline is model-agnostic. GPT-3.5-turbo is cheaper but less capable at following complex grounding instructions. Evaluate with your golden questions to find the right balance.
+A: Yes. GPT-4.1 is the recommended default, but the pipeline is model-agnostic. GPT-3.5-turbo is cheaper but less capable at following complex grounding instructions. Evaluate with your golden questions to find the right balance.
 
 ### 🔒 Safety & Compliance
 

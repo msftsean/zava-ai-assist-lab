@@ -38,7 +38,7 @@ def chunk_text(text: str, chunk_size: int = 500, overlap: int = 50) -> List[str]
     return chunks
 
 
-def count_tokens(text: str, model: str = "gpt-4o") -> int:
+def count_tokens(text: str, model: str = "gpt-4.1") -> int:
     """Count the number of tokens in *text* for the given model.
 
     Args:

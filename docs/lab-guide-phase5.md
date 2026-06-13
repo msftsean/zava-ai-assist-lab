@@ -134,7 +134,7 @@ The evaluation harness runs all golden questions through the RAG pipeline and sc
 python -m evals.harness.eval_runner \
   --dataset evals/datasets/golden_questions.yaml \
   --backend ai_search \
-  --model gpt-4o \
+  --model gpt-4.1 \
   --output evals/results/eval_report.json
 
 # Mock mode (no Azure resources needed — uses recorded responses)

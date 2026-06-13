@@ -35,7 +35,7 @@ variable "resource_group_name" {
 variable "openai_model_name" {
   description = "Azure OpenAI model to deploy (must be available in target cloud/region)."
   type        = string
-  default     = "gpt-4o"
+  default     = "gpt-4.1"
 }
 
 variable "openai_model_version" {

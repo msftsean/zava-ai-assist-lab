@@ -36,7 +36,7 @@ TEST_ENV_VARS: Dict[str, str] = {
     "AZURE_OPENAI_ENDPOINT": "https://test-openai.openai.azure.us",
     "AZURE_OPENAI_API_KEY": "test-key-00000000",
     "AZURE_OPENAI_API_VERSION": "2024-02-15-preview",
-    "AZURE_OPENAI_CHAT_DEPLOYMENT": "gpt-4o",
+    "AZURE_OPENAI_CHAT_DEPLOYMENT": "gpt-4.1",
     "AZURE_OPENAI_EMBEDDING_DEPLOYMENT": "text-embedding-3-small",
     "AZURE_SEARCH_ENDPOINT": "https://test-search.search.azure.us",
     "AZURE_SEARCH_API_KEY": "test-search-key",

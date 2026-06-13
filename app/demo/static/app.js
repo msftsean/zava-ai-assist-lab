@@ -806,7 +806,7 @@ function ArchitectureTab() {
           <div className="arch-arrow">↓</div>
           <div className="arch-box azure">CONTENT SAFETY<br /><small>(Input Pre-Check)</small></div>
           <div className="arch-arrow">↓</div>
-          <div className="arch-box azure">AZURE OPENAI<br /><small>(GPT-4o)</small></div>
+          <div className="arch-box azure">AZURE OPENAI<br /><small>(GPT-4.1)</small></div>
           <div className="arch-arrow">↓</div>
           <div className="arch-box azure">CONTENT SAFETY<br /><small>(Output Post-Check)</small></div>
           <div className="arch-arrow">↓</div>

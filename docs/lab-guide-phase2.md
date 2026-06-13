@@ -127,13 +127,13 @@ Expected structure:
 
 ## 📋 Step 4: Generate Embeddings
 
-Now we convert each text chunk into a vector embedding using Azure OpenAI's `text-embedding-ada-002` model:
+Now we convert each text chunk into a vector embedding using Azure OpenAI's `text-embedding-3-small` model:
 
 ```bash
 python -m app.indexing.embed \
   --storage-account $STORAGE_ACCOUNT \
   --container processed \
-  --openai-deployment "text-embedding-ada-002"
+  --openai-deployment "text-embedding-3-small"
 ```
 
 This reads each chunk, calls the embedding API, and attaches the resulting 1536-dimensional vector to the chunk metadata.
@@ -306,14 +306,14 @@ In production, you'd tune this based on your document structure. Government SOPs
 
 ## 💡 Architecture Decision: Embedding Model Choice
 
-We use `text-embedding-ada-002` (1536 dimensions) because:
+We use `text-embedding-3-small` (1536 dimensions) because:
 
-- 🔹 **Available in Azure Gov** — not all embedding models are available in government regions
-- 🔹 **Well-tested** — extensive benchmarks and community knowledge
-- 🔹 **Cost-effective** — ~$0.0001 per 1K tokens
-- 🔹 **Good enough** — for SOP-style content with clear, structured language, ada-002 performs well
+- 🔹 **Strong retrieval quality** — outperforms the older `text-embedding-ada-002` on standard benchmarks
+- 🔹 **Cost-effective** — roughly 5x cheaper than `text-embedding-ada-002` (~$0.00002 per 1K tokens)
+- 🔹 **Flexible dimensions** — defaults to 1536 dimensions but supports the v3 dimension-reduction feature for smaller, faster indexes
+- 🔹 **Good fit** — for SOP-style content with clear, structured language, `text-embedding-3-small` performs well
 
-When `text-embedding-3-small` or `text-embedding-3-large` become available in Azure Gov, consider upgrading for better retrieval quality (especially with the dimension reduction feature of the v3 models).
+For higher retrieval quality on larger or more nuanced corpora, consider upgrading to `text-embedding-3-large` (3072 dimensions). Confirm model availability in your target Azure Gov region before deploying.
 
 ---
 
@@ -332,7 +332,7 @@ At this point, your SOP content is:
 
 - [x] Uploaded to blob storage
 - [x] Chunked into ~500-token segments with overlap
-- [x] Embedded using `text-embedding-ada-002` (1536 dimensions)
+- [x] Embedded using `text-embedding-3-small` (1536 dimensions)
 - [x] Indexed in Azure AI Search (hybrid text + vector search)
 - [x] Stored in PostgreSQL with pgvector (vector similarity search)
 - [x] Verified in both stores

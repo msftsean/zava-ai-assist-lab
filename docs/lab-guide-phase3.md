@@ -13,8 +13,8 @@ Build and test the retrieval-augmented generation (RAG) pipeline end-to-end. You
 ## ✅ Prerequisites
 
 - 🔹 Phase 2 complete (SOPs indexed in both AI Search and pgvector)
-- 🔹 Azure OpenAI `gpt-4o` deployment ready
-- 🔹 Azure OpenAI `text-embedding-ada-002` deployment ready
+- 🔹 Azure OpenAI `gpt-4.1` deployment ready
+- 🔹 Azure OpenAI `text-embedding-3-small` deployment ready
 
 ---
 
@@ -27,7 +27,7 @@ User Question
      │
      ▼
 ┌─────────────┐
-│  Embed Query │  ← text-embedding-ada-002
+│  Embed Query │  ← text-embedding-3-small
 └──────┬──────┘
        │
        ▼
@@ -52,7 +52,7 @@ User Question
            │
            ▼
 ┌─────────────────────┐
-│  Azure OpenAI GPT-4o │
+│  Azure OpenAI GPT-4.1 │
 └──────────┬──────────┘
            │
            ▼
@@ -161,7 +161,7 @@ python -m app.query.composer \
   --top-k 3
 ```
 
-This outputs the full prompt that will be sent to GPT-4o:
+This outputs the full prompt that will be sent to GPT-4.1:
 
 ```
 === SYSTEM PROMPT ===
@@ -198,7 +198,7 @@ python -m app.query.runner \
   --query "What is the incident response procedure?" \
   --backend ai_search \
   --top-k 3 \
-  --model gpt-4o
+  --model gpt-4.1
 ```
 
 ### ✔️ Verification
@@ -223,7 +223,7 @@ The runner outputs a structured response:
     {"document": "sop-001.md", "chunk": "sop-001_chunk_4", "relevance": 8.45},
     {"document": "sop-003.md", "chunk": "sop-003_chunk_1", "relevance": 7.31}
   ],
-  "model": "gpt-4o",
+  "model": "gpt-4.1",
   "search_backend": "ai_search",
   "search_mode": "hybrid",
   "token_usage": {
@@ -251,7 +251,7 @@ python -m app.query.runner \
   --query "What is the incident response procedure?" \
   --backend pgvector \
   --top-k 3 \
-  --model gpt-4o \
+  --model gpt-4.1 \
   --output /tmp/result_pgvector.json
 
 # AI Search hybrid
@@ -259,7 +259,7 @@ python -m app.query.runner \
   --query "What is the incident response procedure?" \
   --backend ai_search \
   --top-k 3 \
-  --model gpt-4o \
+  --model gpt-4.1 \
   --output /tmp/result_aisearch.json
 
 # Compare
@@ -353,11 +353,11 @@ You are an AI assistant for government operations. Follow these rules:
 
 At this point, you have a working RAG pipeline:
 
-- [x] Query embedding via `text-embedding-ada-002`
+- [x] Query embedding via `text-embedding-3-small`
 - [x] Vector search via pgvector
 - [x] Hybrid search via Azure AI Search
 - [x] Prompt composition with grounding constraints
-- [x] Response generation via GPT-4o with source citations
+- [x] Response generation via GPT-4.1 with source citations
 - [x] Side-by-side comparison of search backends
 
 **Next:** [Phase 4 — Safety Integration](lab-guide-phase4.md)

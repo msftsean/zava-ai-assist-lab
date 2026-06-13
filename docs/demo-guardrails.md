@@ -49,7 +49,7 @@ This demo is built to support conversations with **Zava** and customers operatin
 
 | Resource                       | Notes                                                                                          |
 |--------------------------------|------------------------------------------------------------------------------------------------|
-| **Azure OpenAI**               | Chat deployment whose name matches `AZURE_OPENAI_CHAT_DEPLOYMENT` (e.g., `gpt-4o`).            |
+| **Azure OpenAI**               | Chat deployment whose name matches `AZURE_OPENAI_CHAT_DEPLOYMENT` (e.g., `gpt-4.1`).            |
 | **Azure AI Content Safety**    | Used for both input/output category analysis **and** Prompt Shields (`text:shieldPrompt`).     |
 
 **Recommended roles** (when using Managed Identity instead of keys):
@@ -68,7 +68,7 @@ The demo reuses the standard repo configuration (`app/.env.example`). The keys i
 AZURE_OPENAI_ENDPOINT=https://<resource>.openai.azure.com
 AZURE_OPENAI_API_KEY=<key>
 AZURE_OPENAI_API_VERSION=2024-02-15-preview
-AZURE_OPENAI_CHAT_DEPLOYMENT=gpt-4o
+AZURE_OPENAI_CHAT_DEPLOYMENT=gpt-4.1
 
 # Azure AI Content Safety + Prompt Shields
 AZURE_CONTENT_SAFETY_ENDPOINT=https://<resource>.cognitiveservices.azure.com

@@ -29,7 +29,7 @@ class Settings(BaseSettings):
     azure_openai_api_key: str = ""
     azure_openai_api_version: str = "2024-02-15-preview"
     azure_openai_chat_deployment: str = Field(
-        default="gpt-4o",
+        default="gpt-4.1",
         validation_alias=AliasChoices(
             "azure_openai_chat_deployment", "azure_openai_deployment"
         ),

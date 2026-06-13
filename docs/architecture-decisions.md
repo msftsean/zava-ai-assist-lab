@@ -17,7 +17,7 @@ We need a large language model (LLM) and embedding model for the AI Assist platf
 1. **OpenAI API** (direct, via `api.openai.com`)
 2. **Azure OpenAI Service** (Microsoft-hosted, via `*.openai.azure.com`)
 
-Both provide access to the same underlying models (GPT-4o, text-embedding-ada-002, etc.).
+Both provide access to the same underlying models (GPT-4.1, text-embedding-3-small, etc.).
 
 ### ✅ Decision
 

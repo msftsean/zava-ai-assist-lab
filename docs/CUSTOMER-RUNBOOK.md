@@ -18,7 +18,7 @@ Endpoints: `/health`, `/ingest`, `/index`, `/query`, `/safety/check`, plus an in
 ## 2. Prerequisites
 
 - An Azure subscription where you can create resources (Commercial or Government).
-- Quota for Azure OpenAI in your target region (a chat model such as gpt-4o and an embedding model such as text-embedding-3-small).
+- Quota for Azure OpenAI in your target region (a chat model such as gpt-4.1 and an embedding model such as text-embedding-3-small).
 - Tools on your workstation:
   - Azure CLI (`az`)
   - Terraform >= 1.5.0

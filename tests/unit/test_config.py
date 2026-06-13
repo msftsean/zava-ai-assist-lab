@@ -40,7 +40,7 @@ class TestDefaultConfigValues:
         assert cfg.azure_location == "usgovvirginia"
 
         # OpenAI defaults
-        assert cfg.azure_openai_chat_deployment == "gpt-4o"
+        assert cfg.azure_openai_chat_deployment == "gpt-4.1"
         assert cfg.azure_openai_embedding_deployment == "text-embedding-3-small"
         assert cfg.azure_openai_api_version == "2024-02-15-preview"
 

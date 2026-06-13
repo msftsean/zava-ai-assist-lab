@@ -19,9 +19,9 @@ variable "suffix" {
 }
 
 variable "model_name" {
-  description = "OpenAI model to deploy (e.g. gpt-4o)."
+  description = "OpenAI model to deploy (e.g. gpt-4.1)."
   type        = string
-  default     = "gpt-4o"
+  default     = "gpt-4.1"
 }
 
 variable "model_version" {

@@ -43,7 +43,7 @@ This is a **RAG (Retrieval-Augmented Generation) platform** for Azure Government
 
 1. **Ingestion** (`app/ingestion/`) — Downloads SOP documents (.md/.txt) from Azure Blob Storage, cleans and chunks them into `DocumentChunk` dataclasses.
 2. **Indexing** (`app/indexing/`) — Generates embeddings via Azure OpenAI, stores vectors in both PostgreSQL/pgvector and Azure AI Search.
-3. **Query** (`app/query/`) — Accepts a question, embeds it, performs hybrid search (keyword + vector) across both backends, then composes a grounded prompt for GPT-4o.
+3. **Query** (`app/query/`) — Accepts a question, embeds it, performs hybrid search (keyword + vector) across both backends, then composes a grounded prompt for GPT-4.1.
 4. **Safety** (`app/safety/`) — Pre-checks user input and post-checks model output against Azure AI Content Safety (Hate, Violence, SelfHarm, Sexual categories) with configurable severity thresholds.
 
 The app exposes five endpoints: `/health`, `/ingest`, `/index`, `/query`, `/safety/check`.

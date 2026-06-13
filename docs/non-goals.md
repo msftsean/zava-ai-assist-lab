@@ -39,7 +39,7 @@ See the [Gov Compatibility Checklist](gov-compatibility-checklist.md) for securi
 
 ### ❌ No Custom Model Fine-Tuning
 
-This lab uses Azure OpenAI models **as-is** (GPT-4o, text-embedding-ada-002). We do not:
+This lab uses Azure OpenAI models **as-is** (GPT-4.1, text-embedding-3-small). We do not:
 - Fine-tune models on custom data
 - Train custom embedding models
 - Perform any model training or distillation

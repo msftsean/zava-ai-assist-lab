@@ -11,7 +11,7 @@ location            = "usgovvirginia"
 project_prefix      = "zavaailab"
 resource_group_name = "rg-zavaailab-gov"
 
-openai_model_name    = "gpt-4o"
+openai_model_name    = "gpt-4.1"
 openai_model_version = "2024-05-13"
 
 postgres_admin_username = "pgadmin"
@@ -33,7 +33,7 @@ tags = {
 # project_prefix      = "zavaailab"
 # resource_group_name = "rg-zavaailab-comm"
 #
-# openai_model_name    = "gpt-4o"
+# openai_model_name    = "gpt-4.1"
 # openai_model_version = "2024-05-13"
 #
 # postgres_admin_username = "pgadmin"

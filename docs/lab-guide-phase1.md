@@ -126,8 +126,8 @@ terraform apply -target=module.openai -auto-approve
 
 This deploys:
 - 🔹 An Azure OpenAI resource
-- 🔹 A `gpt-4o` deployment (for chat completions)
-- 🔹 A `text-embedding-ada-002` deployment (for embeddings)
+- 🔹 A `gpt-4.1` deployment (for chat completions)
+- 🔹 A `text-embedding-3-small` deployment (for embeddings)
 
 > **🗣️ Facilitator Note:** In Azure Gov, Azure OpenAI is available in `usgovvirginia` and `usgovarizona`. Model availability may lag behind Commercial by a few weeks. Always check the [Azure Gov services-by-region page](https://azure.microsoft.com/en-us/explore/global-infrastructure/government/ai/).
 
@@ -342,7 +342,7 @@ App → authenticates as Managed Identity → calls Azure OpenAI with AAD token
 At this point, your Azure environment is fully provisioned. You should have:
 
 - [x] Resource group
-- [x] Azure OpenAI with GPT-4o and embedding models
+- [x] Azure OpenAI with GPT-4.1 and embedding models
 - [x] PostgreSQL Flexible Server with pgvector
 - [x] Azure AI Search
 - [x] Blob Storage with SOP containers

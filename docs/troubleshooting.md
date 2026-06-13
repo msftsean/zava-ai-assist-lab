@@ -326,7 +326,7 @@ azure.core.exceptions.HttpResponseError: (400) A document in the request
 🔴 **Symptoms:**
 ```
 openai.RateLimitError: Error code: 429 - Rate limit reached for
-  gpt-4o in organization org-xxx on tokens per min (TPM).
+  gpt-4.1 in organization org-xxx on tokens per min (TPM).
 ```
 
 🟡 **Cause:** You've exceeded the tokens-per-minute rate limit for your Azure OpenAI deployment.
@@ -343,7 +343,7 @@ sleep 60
 az cognitiveservices account deployment show \
   --name oai-aiassist-lab \
   --resource-group rg-aiassist-lab \
-  --deployment-name gpt-4o \
+  --deployment-name gpt-4.1 \
   --query "properties.rateLimits" -o table
 # Increase via Azure Portal → Azure OpenAI → Deployments → Edit
 ```
